@@ -115,6 +115,7 @@ const CardPage = (props: Props) => {
                 Out of cards!
               </Text>
               <Button
+                style={{ padding: 18 }}
                 onPress={() => setStartGame(!startGame)}
                 title="Play Again"
               />
