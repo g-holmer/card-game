@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, ActivityIndicator } from "react-native";
 import Card from "../components/Card";
 import CardButtons from "../components/CardButtons";
-import { Text } from "react-native-elements";
+import { Text, Button } from "react-native-elements";
 
 interface Props {}
 
@@ -13,7 +13,7 @@ const CardPage = (props: Props) => {
   const [drawnCards, setDrawnCards] = useState([]);
   const [guessHigh, setGuessHigh] = useState<boolean>(false);
   const [score, setScore] = useState<number>(0);
-
+  const [startGame, setStartGame] = useState<boolean>(false);
   useEffect(() => {
     fetch(`https://deckofcardsapi.com/api/deck/new/`)
       .then((res) => res.json())
@@ -45,9 +45,10 @@ const CardPage = (props: Props) => {
             });
             const deckData = { cards: cards, deck_id: data.deck_id };
             setNewDeck(deckData);
+            setScore(0);
           });
       });
-  }, []);
+  }, [startGame]);
 
   useEffect(() => {
     if (drawnCards.length > 1) {
@@ -113,6 +114,10 @@ const CardPage = (props: Props) => {
               <Text h4 style={{ color: "red" }}>
                 Out of cards!
               </Text>
+              <Button
+                onPress={() => setStartGame(!startGame)}
+                title="Play Again"
+              />
             </>
           ) : (
             <ActivityIndicator size="large" color="#0000ff" />
