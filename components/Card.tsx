@@ -24,7 +24,6 @@ export default Card;
 const styles = StyleSheet.create({
   cardWrapper: {
     margin: 10,
-    transition: "1s all",
   },
   CardImage: {
     width: 100,

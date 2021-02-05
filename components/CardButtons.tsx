@@ -11,24 +11,26 @@ interface Props {
 const CardHandler = (props: Props) => {
   return (
     <>
-      <Text style={{ fontSize: 17, marginTop: 10 }}>Guess Next Card: Higher/Lower</Text>
+      <Text style={{ fontSize: 17, marginTop: 10 }}>
+        Guess Next Card: Higher/Lower
+      </Text>
       <View style={styles.guessContainer}>
         {props.hasDrawn ? (
           <>
             <Button
-              buttonStyle={{ margin: 10 }}
+              buttonStyle={{ padding: 18, margin: 10 }}
               title="Lower"
               onPress={props.drawHigherCardHandler}
             />
             <Button
-              buttonStyle={{ margin: 10 }}
+              buttonStyle={{ padding: 18, margin: 10 }}
               title="Higher"
               onPress={props.drawHigherCardHandler}
             />
           </>
         ) : (
           <Button
-            buttonStyle={{ margin: 10 }}
+            buttonStyle={{ padding: 18, margin: 10 }}
             title="Start"
             onPress={props.drawHigherCardHandler}
           />
