@@ -9,8 +9,8 @@ interface Props {}
 const CardPage = (props: Props) => {
   const [deck, setNewDeck]: any = useState(null);
   const [hasDrawn, setHasDrawn] = useState<boolean>(false);
-  const [randomCard, setRandomCard] = useState(null);
-  const [drawnCards, setDrawnCards] = useState([]);
+  const [randomCard, setRandomCard] = useState<any>(null);
+  const [drawnCards, setDrawnCards] = useState<any>([]);
   const [guessHigh, setGuessHigh] = useState<boolean>(false);
   const [score, setScore] = useState<number>(0);
   const [startGame, setStartGame] = useState<boolean>(false);
@@ -80,7 +80,7 @@ const CardPage = (props: Props) => {
     const randomCard = deck.cards[index];
     setRandomCard(randomCard);
     setHasDrawn(true);
-    setDrawnCards((prevState) => [...prevState, randomCard]);
+    setDrawnCards((prevState: any) => [...prevState, randomCard]);
 
     deck.cards.splice(index, 1);
   };
