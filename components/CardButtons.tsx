@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, TouchableOpacity } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Button, Text } from "react-native-elements";
 
 interface Props {
@@ -20,7 +20,7 @@ const CardHandler = (props: Props) => {
             <Button
               buttonStyle={{ padding: 18, margin: 10 }}
               title="Lower"
-              onPress={props.drawHigherCardHandler}
+              onPress={props.drawLowerCardHandler}
             />
             <Button
               buttonStyle={{ padding: 18, margin: 10 }}

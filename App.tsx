@@ -1,8 +1,8 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import React from "react";
+import { StyleSheet } from "react-native";
 import CardPage from "./pages/CardPage";
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from "react-native-safe-area-context";
 interface Props {}
 
 const App = (props: Props) => {
